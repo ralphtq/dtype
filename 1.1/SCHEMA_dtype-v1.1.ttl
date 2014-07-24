@@ -109,22 +109,12 @@ dtype:EnumeratedValue
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty dtype:position ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty vaem:description ;
     ] ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty vaem:name ;
-    ] ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onProperty vaem:url ;
     ] ;
 .
 dtype:Enumeration
@@ -167,7 +157,7 @@ dtype:SimpleCodeList
 .
 dtype:ValueReference
   rdf:type owl:Class ;
-  vaem:comment "A value reference is a pointer to an Enumerated Value. The original position of the value can be overridden by the position attribute."^^xsd:string ;
+  vaem:comment "A value reference is a pointer to an Enumerated Value. The original order of the value can be overridden by the \"order\" attribute."^^xsd:string ;
   rdfs:isDefinedBy <http://www.linkedmodel.org/1.1/schema/dtype> ;
   rdfs:isDefinedBy <http://www.linkedmodel.org/schema/dtype> ;
   rdfs:label "Value Reference"^^xsd:string ;
@@ -185,7 +175,7 @@ dtype:ValueReference
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty dtype:position ;
+      owl:onProperty dtype:order ;
     ] ;
 .
 dtype:code
@@ -272,13 +262,6 @@ dtype:orderIndex
   rdfs:isDefinedBy <http://www.linkedmodel.org/1.1/schema/dtype> ;
   rdfs:isDefinedBy <http://www.linkedmodel.org/schema/dtype> ;
   rdfs:label "order index"^^xsd:string ;
-  rdfs:range xsd:nonNegativeInteger ;
-.
-dtype:position
-  rdf:type owl:DatatypeProperty ;
-  rdfs:isDefinedBy <http://www.linkedmodel.org/1.1/schema/dtype> ;
-  rdfs:isDefinedBy <http://www.linkedmodel.org/schema/dtype> ;
-  rdfs:label "position"^^xsd:string ;
   rdfs:range xsd:nonNegativeInteger ;
 .
 dtype:refersTo
