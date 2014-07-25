@@ -23,7 +23,7 @@
   vaem:name "DTYPE"^^xsd:string ;
   vaem:namespace "http://www.linkedmodel.org/schema/dtype"^^xsd:anyURI ;
   vaem:namespacePrefix "dtype"^^xsd:string ;
-  vaem:owner "TopQuadrant"^^xsd:string ;
+  vaem:owner "TopQuadrant, Inc."^^xsd:string ;
   vaem:revision "1.1"^^xsd:string ;
   vaem:usesNonImportedResource dc:author ;
   vaem:usesNonImportedResource dc:contributor ;
