@@ -128,11 +128,10 @@ dtype:Enumeration
 .
 dtype:GMD_DTYPE
   rdf:type vaem:GraphMetaData ;
-  dct:abstract "The ontology \"dtype\" provides a specification of simple data types such as enumerations and codelists. These are needed in support of the conversion of XML Schemas and UML Models to OWL. The purpose of \"dtype\" is to provide a foundation for expressing rich data types. These data types are typically needed when dealing with OWL representations of data structures derived from XML Schema."^^xsd:string ;
   dct:created "2011-05-29"^^xsd:date ;
   dct:modified "2014-08-10"^^xsd:date ;
   dct:title "DTYPE Version1.2 Metadata"^^xsd:string ;
-  vaem:description "VAEM stands for \"Vocabulary for Attaching Essential Metadata\". What VAEM regards as essential metadata is data about dates and times, confidentiality, and other characterisitic qualifiers of the ontology, but also references to where a ontology is documented and where to find ontology registration for governance, attribution and provenance. VAEM makes use of some properties from the DC terms vocabulary using the namespace prefix \"dct\". VAEM is OWL-DL compliant."^^xsd:string ;
+  vaem:description "The ontology \"dtype\" provides a specification of simple data types such as enumerations and codelists. These are needed in support of the conversion of XML Schemas and UML Models to OWL. The purpose of \"dtype\" is to provide a foundation for expressing rich data types. These data types are typically needed when dealing with OWL representations of data structures derived from XML Schema."^^xsd:string ;
   vaem:hasGraphRole vaem:SchemaGraph ;
   vaem:hasOwner vaem:TopQuadrant ;
   vaem:hasSteward vaem:TopQuadrant ;
