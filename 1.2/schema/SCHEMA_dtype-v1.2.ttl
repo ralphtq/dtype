@@ -35,6 +35,23 @@ dtype:CodeList
   rdfs:label "Codelist"^^xsd:string ;
   rdfs:subClassOf dtype:Enumeration ;
 .
+dtype:numericUnion
+  rdf:type rdfs:Datatype ;
+  dct:description "A datatype that is the union of numeric xsd data types. \"numericUnion\" is equivalent to the xsd specification that uses an xsd:union of memberTypes=\"xsd:decimal xsd:double xsd:float xsd:integer\"."^^xsd:string ;
+  rdfs:isDefinedBy <http://www.linkedmodel.org/1.2/schema/dtype> ;
+  rdfs:isDefinedBy <http://www.linkedmodel.org/schema/dtype> ;
+  rdfs:label "numeric union"^^xsd:string ;
+  rdfs:subClassOf rdfs:Resource ;
+  owl:equivalentClass [
+      rdf:type rdfs:Datatype ;
+      owl:unionOf (
+          xsd:float
+          xsd:decimal
+          xsd:integer
+          xsd:double
+        ) ;
+    ] ;
+.
 dtype:CompositeCodeList
   rdf:type owl:Class ;
   dct:description "A composite codelist is a codelist made up of other codelists. It does not introduce any new codes."^^xsd:string ;
