@@ -28,14 +28,21 @@ dcterms:author
 .
 dtype:CodeList
   a owl:Class ;
-  dcterms:description "A codelist is a controlled vocabulary of terms that are used to represent permissible values of a variable in information systems. The representaiton of codes in \"dtype\" has been influenced by CCTS and UBL." ;
+  dcterms:description """
+A codelist is a controlled vocabulary of terms that are used to represent permissible values of a 
+variable in information systems. 
+The representaiton of codes in "dtype" has been influenced by CCTS and UBL.
+""" ;
   rdfs:isDefinedBy <http://www.linkedmodel.org/2.1/schema/dtype> ;
   rdfs:label "Codelist" ;
   rdfs:subClassOf dtype:Enumeration ;
 .
 dtype:CompositeCodeList
   a owl:Class ;
-  dcterms:description "A composite codelist is a codelist made up of other codelists. It does not introduce any new codes." ;
+  dcterms:description """
+A composite codelist is a codelist made up of other codelists. 
+It does not introduce any new codes.
+""" ;
   rdfs:isDefinedBy <http://www.linkedmodel.org/2.1/schema/dtype> ;
   rdfs:label "Composite Code List" ;
   rdfs:subClassOf dtype:CodeList ;
@@ -49,7 +56,10 @@ dtype:CompositeCodeList
 .
 dtype:DerivedCodeList
   a owl:Class ;
-  dcterms:description "A derived codelist is a sublist of another codelist. The members that it has must be members of the source list." ;
+  dcterms:description """
+A derived codelist is a sublist of another codelist. 
+The members that it has must be members of the source list.
+""" ;
   rdfs:isDefinedBy <http://www.linkedmodel.org/2.1/schema/dtype> ;
   rdfs:label "Derived Code List" ;
   rdfs:subClassOf dtype:CodeList ;
@@ -109,7 +119,7 @@ This enables the enumeration itself to be referenceable.
 One need for this is in determing the default value of an enumeration.
 Another need is in the management of sub-enumerations and composite enumerations.
 """ ;
-  rdfs:isDefinedBy <http://www.linkedmodel.org/2.1/schema/dtype> ;
+  rdfs:isDefinedBy <http://www.linkedmodel.org/schema/dtype> ;
   rdfs:label "DTYPE Enumeration" ;
   rdfs:subClassOf owl:Thing ;
   rdfs:subClassOf [
@@ -120,12 +130,22 @@ Another need is in the management of sub-enumerations and composite enumerations
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom dtype:EnumeratedValue ;
-      owl:onProperty dtype:value ;
+      owl:onProperty dtype:objectValue ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom dtype:EnumeratedValue ;
+      owl:onProperty dtype:objectValue ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxCardinality 1 ;
       owl:onProperty dtype:defaultObjectValue ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality 1 ;
+      owl:onProperty dtype:objectValue ;
     ] ;
 .
 dtype:GMD_DTYPE
