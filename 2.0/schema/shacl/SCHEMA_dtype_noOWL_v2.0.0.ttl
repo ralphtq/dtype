@@ -11,16 +11,19 @@ dtype:CodeList a rdfs:Class,
         sh:NodeShape ;
     rdfs:label "Codelist" ;
     dcterms:description """
-    A codelist is a controlled vocabulary of terms that are used to represent permissible values of a variable in information systems. 
+    A codelist is a controlled vocabulary of terms that are used to represent permissible values of a variable in information systems.
     The representaiton of codes in "dtype" has been influenced by CCTS and UBL.
-    """" ;
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     rdfs:subClassOf dtype:Enumeration .
 
 dtype:CompositeCodeList a rdfs:Class,
         sh:NodeShape ;
     rdfs:label "Composite Code List" ;
-    dcterms:description "A composite codelist is a codelist made up of other codelists. It does not introduce any new codes." ;
+    dcterms:description """
+    A composite codelist is a codelist made up of other codelists.
+    It does not introduce any new codes.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     rdfs:subClassOf dtype:CodeList ;
     sh:not [ sh:class dtype:DerivedCodeList ],
@@ -31,7 +34,7 @@ dtype:DerivedCodeList a rdfs:Class,
         sh:NodeShape ;
     rdfs:label "Derived Code List" ;
     dcterms:description """
-    A derived codelist is a sublist of another codelist. 
+    A derived codelist is a sublist of another codelist.
     The members that it has must be members of the source list.
     """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
@@ -45,7 +48,7 @@ dtype:EnumeratedValue a rdfs:Class,
         sh:NodeShape ;
     rdfs:label "DTYPE Enumerated Value" ;
     dcterms:description """
-    The base class for datatypes that have values that are restriced to a set of literals or tokens. 
+    The base class for datatypes that have values that are restriced to a set of literals or tokens.
     The members of the restriction may themselves be restriced by facets that apply to scalar data types.
     """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
@@ -58,10 +61,9 @@ dtype:Enumeration a rdfs:Class,
         sh:NodeShape ;
     rdfs:label "DTYPE Enumeration" ;
     dcterms:description """
-    A type that serves as a container for the enumerated values of an enumeration. 
-    This enables the enumeration itself to be referenceable. 
-    One need for this is in determing the default value of an enumeration,
-     another need is in the management of sub-enumerations and composite enumerations.
+    A type that serves as a container for the enumerated values of an enumeration.
+    This enables the enumeration itself to be referenceable.
+    One need for this is in determing the default value of an enumeration, another need is in the management of sub-enumerations and composite enumerations.
     """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     sh:property dtype:Enumeration-defaultValue,
@@ -70,7 +72,9 @@ dtype:Enumeration a rdfs:Class,
 dtype:SimpleCodeList a rdfs:Class,
         sh:NodeShape ;
     rdfs:label "Simple Code List" ;
-    dcterms:description "A simple codelist is one made up only of enumerated values." ;
+    dcterms:description """
+    A simple codelist is one made up only of enumerated values.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     rdfs:subClassOf dtype:CodeList ;
     sh:not [ sh:class dtype:CompositeCodeList ],
@@ -81,7 +85,7 @@ dtype:ValueReference a rdfs:Class,
         sh:NodeShape ;
     rdfs:label "Value Reference" ;
     dcterms:description """
-    A value reference is a pointer to an Enumerated Value. 
+    A value reference is a pointer to an Enumerated Value.
     The original order of the value can be overridden by the "order" attribute.
     """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
@@ -98,7 +102,9 @@ dcterms:author-range a sh:NodeShape ;
 dtype:dateUnion a rdfs:Datatype,
         sh:NodeShape ;
     rdfs:label "date union" ;
-    dcterms:description "A datatype that is the union of date datatypes." ;
+    dcterms:description """
+    A datatype that is the union of date datatypes.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     sh:or ( [ sh:datatype xsd:date ] [ sh:datatype xsd:dateTime ] [ sh:datatype xsd:gYear ] [ sh:datatype xsd:gMonth ] [ sh:datatype xsd:gMonthDay ] [ sh:datatype xsd:gYearMonth ] [ sh:datatype xsd:gDay ] ) .
 
@@ -112,7 +118,10 @@ dtype:isInvalid-range a sh:NodeShape ;
 dtype:numericUnion a rdfs:Datatype,
         sh:NodeShape ;
     rdfs:label "numeric union" ;
-    dcterms:description "A datatype that is the union of numeric xsd data types. \"numericUnion\" is equivalent to the xsd specification that uses an xsd:union of memberTypes=\"xsd:decimal xsd:double xsd:float xsd:integer\"." ;
+    dcterms:description """
+    A datatype that is the union of numeric xsd data types.
+    "numericUnion" is equivalent to the xsd specification that uses an xsd:union of memberTypes="xsd:decimal xsd:double xsd:float xsd:integer".
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     sh:or ( [ sh:datatype xsd:float ] [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] [ sh:datatype xsd:double ] ) .
 
@@ -180,9 +189,14 @@ dtype:Enumeration-value a sh:PropertyShape ;
 dtype:GMD_DTYPE a vaem:GraphMetaData ;
     rdfs:label "DTYPE Schema Version 2.0 Metadata" ;
     dcterms:created "2011-05-29"^^xsd:date ;
-    dcterms:modified "2020-03-25"^^xsd:date ;
+    dcterms:modified "2026-09-28"^^xsd:date ;
     dcterms:title "DTYPE Version2.0 Metadata" ;
-    vaem:description "The ontology \"dtype\" provides a specification of simple data types such as enumerations and codelists. These are needed in support of the conversion of XML Schemas and UML Models to OWL. The purpose of \"dtype\" is to provide a foundation for expressing rich data types. These data types are typically needed when dealing with OWL representations of data structures derived from XML Schema." ;
+    vaem:description """
+    The ontology "dtype" provides a specification of simple data types such as enumerations and codelists.
+    These are needed in support of the conversion of XML Schemas and UML Models to OWL.
+    The purpose of "dtype" is to provide a foundation for expressing rich data types.
+    These data types are typically needed when dealing with OWL representations of data structures derived from XML Schema.
+    """ ;
     vaem:graphName "DTYPE" ;
     vaem:graphTitle "Datatype Schema (DTYPE) - Version 2.0" ;
     vaem:hasGraphRole vaem:SchemaGraph ;
@@ -231,56 +245,84 @@ dtype:ValueReference-refersTo a sh:PropertyShape ;
 
 dtype:code a rdf:Property ;
     rdfs:label "code" ;
-    dcterms:description "A property for expressing a unique value for a member of an enumeration. The range has been set to \"xsd:anySimpleType\" to allow for any scalar datatype." ;
-    rdfs:comment "A unique value that is assigned to an enumeration member." ;
+    dcterms:description """
+    A property for expressing a unique value for a member of an enumeration.
+    The range has been set to "xsd:anySimpleType" to allow for any scalar datatype.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:compositeOf a rdf:Property ;
     rdfs:label "composite of" ;
-    dcterms:description "A property for constructing composite data structures" ;
+    dcterms:description """
+    A property for constructing composite data structures
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:defaultValue a rdf:Property ;
     rdfs:label "default value" ;
-    dcterms:description "The property \"dtype:defaultValue\" is a general property for specifying a value in situations where none is specified, or can be determined. In some cases of use, this property could have a scalar value and in other cases may need to refer to a first class concept that holds a \"value object\".  For this reason, the  type of this property is set as \"rdf:Property\" and the property is rangeless." ;
+    dcterms:description """
+    The property "dtype:defaultValue" is a general property for specifying a value in situations where none is specified, or can be determined.
+    In some cases of use, this property could have a scalar value and in other cases may need to refer to a first class concept that holds a "value object".
+    For this reason, the type of this property is set as "rdf:Property" and the property is rangeless.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:derivedFrom a rdf:Property ;
     rdfs:label "derived from" ;
-    dcterms:description "A property for specifying a derivation relationship." ;
+    dcterms:description """
+    A property for specifying a derivation relationship.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:literal a rdf:Property ;
     rdfs:label "literal" ;
-    dcterms:description "A general purpose property for holding string literals." ;
-    rdfs:comment "Optional machine-readable string for how the enumerated value can be referred to. This can be used when the code value is numeric, as an alternative to using a code. Literal is not the same as label which is intended for human readable display. For example, a code for January may be 1, the literal may be ‘J’ or ‘jan’ and the label 'January’." ;
+    dcterms:description """
+    Optional machine-readable string for how the enumerated value can be referred to.
+    This can be used when the code value is numeric, as an alternative to using a code.
+    Literal is not the same as label which is intended for human readable display.
+    For example, a code for January may be 1, the literal may be ‘J’ or ‘jan’ and the label 'January’.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:refersTo a rdf:Property ;
     rdfs:label "refers to" ;
-    dcterms:description "An indirection pointer for relating a slot in am occurrence data structure, such as \"dtype:ValueReference\" with another resource." ;
+    dcterms:description """
+    An indirection pointer for relating a slot in am occurrence data structure, such as "dtype:ValueReference" with another resource.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:hasMember a rdf:Property ;
     rdfs:label "has member" ;
-    dcterms:description "A property for specifying how member elements make up a data structure." ;
+    dcterms:description """
+    A property for specifying how member elements make up a data structure.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:isInvalid a rdf:Property ;
     rdfs:label "is invalid" ;
-    dcterms:description "A boolean flag to state that a value is invalid with respect to its type." ;
+    dcterms:description """
+    A boolean flag to state that a value is invalid with respect to its type.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:order a rdf:Property ;
     rdfs:label "order" ;
-    dcterms:description "The property \"dtype:order\" provides a means to specify a precedence. One use of order is in specifying ordered enumerations such as \"voag:ConfidentialityLevel\".  A similar property, but with an important type difference, is \"vaem:orderIndex\". This is for use on property occurrences in class axioms where it can be placed on a restriction to specify how that property may be transformed into other representations where ordering has some importance, for example, in XML Schema sequences.  Whereas \"vaem:order\" is a datatype property, \"vaem:orderIndex\" is an annotation property." ;
-    rdfs:comment "The \"order\" property specifies a value that can establish precedence and ordinality. One use of order is in make an enumeration an ordinal type. For example \"RiskLevel\" might have the values \"very low\", \"low\", \"medium\", \"high\" and \"very high\". A query that asks for all risks that are greater than \"medium\" would use the ordinal values and return those resources that have “medium”, “high” and “very high” ordinality." ;
+    dcterms:description """
+    The property "dtype:order" provides a means to specify a precedence.
+    One use of order is in specifying ordered enumerations such as "voag:ConfidentialityLevel".
+    A similar property, but with an important type difference, is "vaem:orderIndex".
+    This is for use on property occurrences in class axioms where it can be placed on a restriction to specify how that property may be transformed into other representations where ordering has some importance, for example, in XML Schema sequences.
+    Whereas "vaem:order" is a datatype property, "vaem:orderIndex" is an annotation property.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     rdfs:seeAlso dtype:orderIndex .
 
 dtype:value a rdf:Property ;
     rdfs:label "value" ;
-    dcterms:description "The property \"dtype:value\" is a general property that in some cases could have scalar values and in other cases may refer to a first class concept that is a \"value object\". For this reason, the  type of this property is set as \"rdf:Property\" and the property is rangeless." ;
+    dcterms:description """
+    The property "dtype:value" is a general property that in some cases could have scalar values and in other cases may refer to a first class concept that is a "value object".
+    For this reason, the type of this property is set as "rdf:Property" and the property is rangeless.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dcterms:author a rdf:Property ;
@@ -289,7 +331,12 @@ dcterms:author a rdf:Property ;
 
 dtype:orderIndex a rdf:Property ;
     rdfs:label "order index" ;
-    dcterms:description "The property \"dtype:orderIndex\" is an annotation property to specify a position that some value or structure will have. One use is to specify the place that a resource has in a sequence. One use is on property occurrences in class axioms. Here \"vaem:orderIndex\" is placed on a restriction to specify how that property may be transformed into a representation where ordering has some importance, for example, in XML Schema sequences." ;
+    dcterms:description """
+    The property "dtype:orderIndex" is an annotation property to specify a position that some value or structure will have.
+    One use is to specify the place that a resource has in a sequence.
+    One use is on property occurrences in class axioms.
+    Here "vaem:orderIndex" is placed on a restriction to specify how that property may be transformed into a representation where ordering has some importance, for example, in XML Schema sequences.
+    """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> a owl:Ontology ;
