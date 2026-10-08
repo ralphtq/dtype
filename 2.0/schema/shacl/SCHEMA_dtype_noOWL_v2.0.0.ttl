@@ -63,7 +63,8 @@ dtype:Enumeration a rdfs:Class,
     dcterms:description """
     A type that serves as a container for the enumerated values of an enumeration.
     This enables the enumeration itself to be referenceable.
-    One need for this is in determing the default value of an enumeration, another need is in the management of sub-enumerations and composite enumerations.
+    One need for this is in determining the default value of an enumeration,
+     another need is in the management of sub-enumerations and composite enumerations.
     """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     sh:property dtype:Enumeration-defaultValue,
@@ -92,13 +93,6 @@ dtype:ValueReference a rdfs:Class,
     sh:property dtype:ValueReference-order,
         dtype:ValueReference-refersTo .
 
-dcterms:author-range a sh:NodeShape ;
-    rdfs:label "Values of author" ;
-    rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
-    sh:property [ sh:datatype xsd:string ;
-            sh:path dcterms:author ] ;
-    sh:targetSubjectsOf dcterms:author .
-
 dtype:dateUnion a rdfs:Datatype,
         sh:NodeShape ;
     rdfs:label "date union" ;
@@ -120,7 +114,8 @@ dtype:numericUnion a rdfs:Datatype,
     rdfs:label "numeric union" ;
     dcterms:description """
     A datatype that is the union of numeric xsd data types.
-    "numericUnion" is equivalent to the xsd specification that uses an xsd:union of memberTypes="xsd:decimal xsd:double xsd:float xsd:integer".
+    "numericUnion" is equivalent to the xsd specification that uses an xsd:union of member types:
+     "xsd:decimal, xsd:double, xsd:float, xsd:integer".
     """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     sh:or ( [ sh:datatype xsd:float ] [ sh:datatype xsd:decimal ] [ sh:datatype xsd:integer ] [ sh:datatype xsd:double ] ) .
@@ -205,24 +200,21 @@ dtype:GMD_DTYPE a vaem:GraphMetaData ;
     vaem:hasSteward vaem:TopQuadrant ;
     vaem:intent "The purpose of DTYPE is to provide, by import, a foundation for  data types." ;
     vaem:isMetadataFor <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
-    vaem:latestPublishedVersion "http://www.linkedmodel.org/doc/2015/SCHEMA_dtype-v1.2"^^xsd:anyURI ;
     vaem:logo "http://www.linkedmodel.org/lib/lm/images/logos/dtype_logo-300x110.png"^^xsd:anyURI ;
     vaem:name "DTYPE" ;
     vaem:namespace "http://www.linkedmodel.org/schema/dtype#"^^xsd:anyURI ;
     vaem:namespacePrefix "dtype" ;
-    vaem:owner "TopQuadrant, Inc." ;
-    vaem:previousPublishedVersion "http://linkedmodel.org/doc/dtype/1.0/"^^xsd:anyURI ;
     vaem:releaseDate "2016-09-27"^^xsd:date ;
     vaem:revision "2.0" ;
-    vaem:title "Datatype Schema (DTYPE) - Version 1.2" ;
-    vaem:turtleFileURL "http://www.linkedmodel.org/dtype/1.2/schema/SCHEMA_dtype-v1.2.ttl"^^xsd:anyURI ;
+    vaem:title "Datatype Schema (DTYPE) - Version 2.0.0" ;
     vaem:usesNonImportedResource dcterms:abstract,
         dcterms:author,
         dcterms:created,
         dcterms:modified,
         dcterms:title,
         <http://voag.linkedmodel.org/voag/CC-SHAREALIKE_3PT0-US> ;
-    vaem:withAttributionTo "DTYPE is issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to TopQuadrant, Inc." ;
+    vaem:withAttributionTo "DTYPE is issued under a Creative Commons Attribution Share Alike 3.0 United States License. 
+    Attribution should be made to LinkedModels.org." ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:SimpleCodeList-hasMember a sh:PropertyShape ;
