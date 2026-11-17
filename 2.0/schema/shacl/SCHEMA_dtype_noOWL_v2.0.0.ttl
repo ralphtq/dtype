@@ -186,7 +186,7 @@ dtype:GMD_DTYPE a vaem:GraphMetaData ;
     dcterms:created "2011-05-29"^^xsd:date ;
     dcterms:modified "2026-09-28"^^xsd:date ;
     dcterms:title "DTYPE Version2.0 Metadata" ;
-    vaem:description """
+    dcterms:description """
     The ontology "dtype" provides a specification of simple data types such as enumerations and codelists.
     These are needed in support of the conversion of XML Schemas and UML Models to OWL.
     The purpose of "dtype" is to provide a foundation for expressing rich data types.
