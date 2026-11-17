@@ -196,8 +196,8 @@ dtype:GMD_DTYPE a vaem:GraphMetaData ;
     vaem:graphTitle "Datatype Schema (DTYPE) - Version 2.0" ;
     vaem:hasGraphRole vaem:SchemaGraph ;
     vaem:hasLicenseType <http://voag.linkedmodel.org/voag/CC-SHAREALIKE_3PT0-US> ;
-    vaem:hasOwner vaem:TopQuadrant ;
-    vaem:hasSteward vaem:TopQuadrant ;
+    vaem:hasOwner vaem:LinkedModels ;
+    vaem:hasSteward vaem:LinkedModels ;
     vaem:intent "The purpose of DTYPE is to provide, by import, a foundation for  data types." ;
     vaem:isMetadataFor <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     vaem:logo "http://www.linkedmodel.org/lib/lm/images/logos/dtype_logo-300x110.png"^^xsd:anyURI ;
@@ -214,7 +214,7 @@ dtype:GMD_DTYPE a vaem:GraphMetaData ;
         dcterms:title,
         <http://voag.linkedmodel.org/voag/CC-SHAREALIKE_3PT0-US> ;
     vaem:withAttributionTo """DTYPE is issued under a Creative Commons Attribution Share Alike 3.0 United States License. 
-    Attribution should be made to LinkedModels.org.""" ;
+    Attribution should be made to Linkedmodels.""" ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> .
 
 dtype:SimpleCodeList-hasMember a sh:PropertyShape ;
@@ -337,5 +337,5 @@ dtype:orderIndex a rdf:Property ;
     dcterms:subject "Datatype Schema" ;
     dcterms:title "Datatype Ontology" ;
     vaem:hasGraphMetadata dtype:GMD_DTYPE ;
-    owl:imports <http://www.linkedmodel.org/schema/vaem> .
+    owl:imports <http://www.linkedmodel.org/3.0.0/schema/shacl/vaem> .
 
