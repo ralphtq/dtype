@@ -16,6 +16,7 @@ code lists and enumerations, and properties such as `dtype:value`,
 | v1.1 | `http://www.linkedmodel.org/1.1/schema/dtype` | `1.1/SCHEMA_dtype-v1.1.ttl` |
 | v1.2 | `http://www.linkedmodel.org/1.2/schema/dtype` | `1.2/schema/SCHEMA_dtype-v1.2.ttl` |
 | v2.0 | `http://www.linkedmodel.org/2.0/schema/dtype` | `2.0/schema/SCHEMA_dtype_v2.0.ttlx` |
+| v2.0 SHACL (no OWL) | `http://www.linkedmodel.org/2.0.0/schema/shacl/dtype` | `2.0/schema/shacl/SCHEMA_dtype_noOWL_v2.0.0.ttl` |
 
 The IRIs are unchanged by the move out of `linkedmodels`.
 
@@ -32,8 +33,18 @@ Two files currently declare the unversioned ontology IRI:
 schema/        current (unversioned) DTYPE, RDF/XML
 1.1/ 1.2/      earlier versions
 2.0/ 2.1/      later versions (see the note on the unversioned IRI above)
+2.0/schema/shacl/  SHACL-only version of v2.0
+scripts/       parse check
 images/        logo
 ```
+
+## SHACL schema
+
+`2.0/schema/shacl/SCHEMA_dtype_noOWL_v2.0.0.ttl` is a SHACL-only version of
+DTYPE 2.0. It imports the VAEM SHACL schema
+(`http://www.linkedmodel.org/3.0.0/schema/shacl/vaem`) rather than the OWL
+VAEM. It does not yet include `dtype:objectValue` and
+`dtype:defaultObjectValue`, which `schema/dtype` (2.1) adds.
 
 ## Work in progress
 
@@ -42,8 +53,6 @@ These branches carry DTYPE work that has not yet been merged into `main`:
 - `qudt-fixes-rh`: v2.1 as Turtle (`2.1/schema/SCHEMA_dtype_v2.1.ttl` and the
   unversioned `2.1/schema/SCHEMA_dtype.ttl`, which has the same triples as
   `schema/dtype`). Merging it also deletes `2.0/schema/dtype.ttl`.
-- `shacl-schemas`: SHACL-only (no OWL) version,
-  `2.0/schema/shacl/SCHEMA_dtype_noOWL_v2.0.0.ttl`
 
 ## History
 
