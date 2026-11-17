@@ -23,7 +23,7 @@
   <http://www.linkedmodel.org/1.0/schema/vaem#name> "DTYPE"^^xsd:string ;
   <http://www.linkedmodel.org/1.0/schema/vaem#namespace> "http://www.linkedmodel.org/schema/dtype"^^xsd:anyURI ;
   <http://www.linkedmodel.org/1.0/schema/vaem#namespacePrefix> "dtype"^^xsd:string ;
-  <http://www.linkedmodel.org/1.0/schema/vaem#owner> "TopQuadrant, Inc."^^xsd:string ;
+  <http://www.linkedmodel.org/1.0/schema/vaem#owner> "Linkedmodels"^^xsd:string ;
   <http://www.linkedmodel.org/1.0/schema/vaem#revision> "1.1"^^xsd:string ;
   <http://www.linkedmodel.org/1.0/schema/vaem#usesNonImportedResource> dc:author ;
   <http://www.linkedmodel.org/1.0/schema/vaem#usesNonImportedResource> dc:contributor ;

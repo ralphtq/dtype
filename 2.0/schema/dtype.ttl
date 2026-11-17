@@ -132,8 +132,8 @@ dtype:GMD_DTYPE
   vaem:graphTitle "Datatype Schema (DTYPE) - Version 2.0" ;
   vaem:hasGraphRole vaem:SchemaGraph ;
   vaem:hasLicenseType <http://voag.linkedmodel.org/voag/CC-SHAREALIKE_3PT0-US> ;
-  vaem:hasOwner vaem:TopQuadrant ;
-  vaem:hasSteward vaem:TopQuadrant ;
+  vaem:hasOwner vaem:LinkedModels ;
+  vaem:hasSteward vaem:LinkedModels ;
   vaem:intent "The purpose of DTYPE is to provide, by import, a foundation for  data types." ;
   vaem:isMetadataFor <http://www.linkedmodel.org/schema/dtype> ;
   vaem:latestPublishedVersion "http://www.linkedmodel.org/doc/2015/SCHEMA_dtype-v1.2"^^xsd:anyURI ;
@@ -141,7 +141,7 @@ dtype:GMD_DTYPE
   vaem:name "DTYPE" ;
   vaem:namespace "http://www.linkedmodel.org/schema/dtype#"^^xsd:anyURI ;
   vaem:namespacePrefix "dtype" ;
-  vaem:owner "TopQuadrant, Inc." ;
+  vaem:owner "Linkedmodels" ;
   vaem:previousPublishedVersion "http://linkedmodel.org/doc/dtype/1.0/"^^xsd:anyURI ;
   vaem:releaseDate "2016-09-27"^^xsd:date ;
   vaem:revision "2.0" ;
@@ -153,7 +153,7 @@ dtype:GMD_DTYPE
   vaem:usesNonImportedResource dct:modified ;
   vaem:usesNonImportedResource dct:title ;
   vaem:usesNonImportedResource <http://voag.linkedmodel.org/voag/CC-SHAREALIKE_3PT0-US> ;
-  vaem:withAttributionTo "DTYPE is issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to TopQuadrant, Inc." ;
+  vaem:withAttributionTo "DTYPE is issued under a Creative Commons Attribution Share Alike 3.0 United States License. Attribution should be made to Linkedmodels" ;
   rdfs:isDefinedBy <http://www.linkedmodel.org/schema/dtype> ;
   rdfs:label "DTYPE Schema Version 2.0 Metadata" ;
 .
