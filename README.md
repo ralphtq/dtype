@@ -32,7 +32,6 @@ Two files currently declare the unversioned ontology IRI:
 schema/        current (unversioned) DTYPE, RDF/XML
 1.1/ 1.2/      earlier versions
 2.0/ 2.1/      later versions (see the note on the unversioned IRI above)
-doc/           generated HTML documentation (2015, for v1.2)
 images/        logo
 ```
 
