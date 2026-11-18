@@ -12,7 +12,7 @@ dtype:CodeList a rdfs:Class,
     rdfs:label "Codelist" ;
     dcterms:description """
 A codelist is a controlled vocabulary of terms that are used to represent permissible values of a variable in information systems.
-The representaiton of codes in "dtype" has been influenced by CCTS and UBL.
+The representation of codes in "dtype" has been influenced by CCTS and UBL.
 """ ;
     rdfs:isDefinedBy <http://www.linkedmodel.org/2.0.0/schema/shacl/dtype> ;
     rdfs:subClassOf dtype:Enumeration .

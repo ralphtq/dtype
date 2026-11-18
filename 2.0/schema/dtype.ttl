@@ -30,7 +30,7 @@ dct:author
 .
 dtype:CodeList
   a owl:Class ;
-  dct:description "A codelist is a controlled vocabulary of terms that are used to represent permissible values of a variable in information systems. The representaiton of codes in \"dtype\" has been influenced by CCTS and UBL." ;
+  dct:description "A codelist is a controlled vocabulary of terms that are used to represent permissible values of a variable in information systems. The representation of codes in \"dtype\" has been influenced by CCTS and UBL." ;
   rdfs:isDefinedBy <http://www.linkedmodel.org/schema/dtype> ;
   rdfs:label "Codelist" ;
   rdfs:subClassOf dtype:Enumeration ;
