@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.linkedmodel</groupId>
+  <artifactId>dtype</artifactId>
+  <version>0</version>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>3.9.0</version>
+        <configuration>
+          <markdown>
+            <includes>
+              <include>README.md</include>
+              <include>CHANGELOG.md</include>
+            </includes>
+            <flexmark />
+          </markdown>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

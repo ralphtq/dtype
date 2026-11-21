@@ -54,6 +54,22 @@ These branches carry DTYPE work that has not yet been merged into `main`:
   unversioned `2.1/schema/SCHEMA_dtype.ttl`, which has the same triples as
   `schema/dtype`). Merging it also deletes `2.0/schema/dtype.ttl`.
 
+## Formatting
+
+`README.md` and `CHANGELOG.md` are formatted with
+[Spotless](https://github.com/diffplug/spotless), using the settings QUDT
+uses (`pom.xml`). DTYPE has no Turtle sources to format: the current schema
+is RDF/XML and the version folders are frozen.
+
+You need Java 25 and Maven 3.6.3 or later. From the top of the repository,
+`mvn spotless:check` lists the files that need formatting and
+`mvn spotless:apply` formats them in place.
+
+The **Format** workflow on GitHub runs `spotless:check` on every push and
+pull request, and fails if a file is not formatted. To format on GitHub
+instead, run it from the Actions tab with "apply" ticked: it formats the
+files and commits the result to the branch.
+
 ## History
 
 DTYPE was previously maintained in
