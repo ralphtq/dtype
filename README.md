@@ -9,14 +9,14 @@ code lists and enumerations, and properties such as `dtype:value`,
 
 ## IRIs
 
-| What | IRI | File |
-|---|---|---|
-| Ontology (current) | `http://www.linkedmodel.org/schema/dtype` | `schema/dtype` (RDF/XML, v2.1 content) |
-| Namespace | `http://www.linkedmodel.org/schema/dtype#` (prefix `dtype:`) | |
-| v1.1 | `http://www.linkedmodel.org/1.1/schema/dtype` | `1.1/SCHEMA_dtype-v1.1.ttl` |
-| v1.2 | `http://www.linkedmodel.org/1.2/schema/dtype` | `1.2/schema/SCHEMA_dtype-v1.2.ttl` |
-| v2.0 | `http://www.linkedmodel.org/2.0/schema/dtype` | `2.0/schema/SCHEMA_dtype_v2.0.ttlx` |
-| v2.0 SHACL (no OWL) | `http://www.linkedmodel.org/2.0.0/schema/shacl/dtype` | `2.0/schema/shacl/SCHEMA_dtype_noOWL_v2.0.0.ttl` |
+|        What         |                             IRI                              |                       File                       |
+|---------------------|--------------------------------------------------------------|--------------------------------------------------|
+| Ontology (current)  | `http://www.linkedmodel.org/schema/dtype`                    | `schema/dtype` (RDF/XML, v2.1 content)           |
+| Namespace           | `http://www.linkedmodel.org/schema/dtype#` (prefix `dtype:`) |                                                  |
+| v1.1                | `http://www.linkedmodel.org/1.1/schema/dtype`                | `1.1/SCHEMA_dtype-v1.1.ttl`                      |
+| v1.2                | `http://www.linkedmodel.org/1.2/schema/dtype`                | `1.2/schema/SCHEMA_dtype-v1.2.ttl`               |
+| v2.0                | `http://www.linkedmodel.org/2.0/schema/dtype`                | `2.0/schema/SCHEMA_dtype_v2.0.ttlx`              |
+| v2.0 SHACL (no OWL) | `http://www.linkedmodel.org/2.0.0/schema/shacl/dtype`        | `2.0/schema/shacl/SCHEMA_dtype_noOWL_v2.0.0.ttl` |
 
 The IRIs are unchanged by the move out of `linkedmodels`.
 
