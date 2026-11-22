@@ -1,6 +1,6 @@
 ---
 name: ontology-design
-description: Design rules for the SHACL/RDF graphs in VAEM, VOAG, DTYPE, DEONA, NRMDOC and TROM — property shape naming, rdfs:isDefinedBy on every resource with vaem:isElaboratedIn for additions to other ontologies, one GMD_ graph metadata resource per graph, multi-line dcterms:description strings, and vaem:usesNonImportedResource for every elaborated resource from another namespace. Use when adding, renaming, reviewing or fixing classes, node shapes, property shapes or graph metadata in src/ (or, in DTYPE, schema/).
+description: Design rules for the SHACL/RDF graphs in VAEM, VOAG, DTYPE, DEONA, NRMDOC and TROM — property shape naming, rdfs:isDefinedBy on every resource with vaem:isElaboratedIn for additions to other ontologies, one GMD_ graph metadata resource per graph, multi-line dcterms:description strings, and vaem:usesNonImportedResource for every elaborated resource from another namespace, and owl:imports of unversioned graph IRIs. Use when adding, renaming, reviewing or fixing classes, node shapes, property shapes or graph metadata in src/ (or, in DTYPE, schema/).
 ---
 
 # Ontology design rules
@@ -225,9 +225,30 @@ When you add an elaboration, add its `vaem:usesNonImportedResource` in the
 same change; when you remove the last elaboration of a resource, remove the
 entry too.
 
+## Rule 6: owl:imports names the latest, unversioned graph IRI
+
+Every `owl:imports` names the **unversioned** IRI of the graph it imports: the
+graph IRI without its version segment, which stands for the latest version.
+This applies to imports of other ontologies and to imports between graphs of
+the same ontology. No `$$…$$` token appears in an import.
+
+Graph IRIs themselves (the `owl:Ontology` IRI, and `rdfs:isDefinedBy`,
+`vaem:isMetadataFor` and `vaem:isElaboratedIn` for the graph's own resources)
+keep the full version, `$$VERSION$$`.
+
+```turtle
+# In VOAG's SHACL schema graph
+<https://w3id.org/voag/$$VERSION$$/schema/shacl>
+  a owl:Ontology ;
+  owl:imports <http://www.linkedmodel.org/schema/dtype> ;
+  owl:imports <http://www.linkedmodel.org/schema/vaem> .
+```
+
+Wrong: `owl:imports <http://www.linkedmodel.org/3.0.0/schema/vaem>` or `owl:imports <http://www.linkedmodel.org/$$VAEM_VERSION$$/schema/vaem>`.
+
 ## Checking
 
 Before committing, run the release build (`python3 scripts/release.py
 --version <next>-SNAPSHOT --out target/check`) and look at each changed
-resource against the three rules. When renaming, search the other two
+resource against the rules. When renaming, search the other two
 repositories for the old name.
