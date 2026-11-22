@@ -54,6 +54,20 @@ These branches carry DTYPE work that has not yet been merged into `main`:
   unversioned `2.1/schema/SCHEMA_dtype.ttl`, which has the same triples as
   `schema/dtype`). Merging it also deletes `2.0/schema/dtype.ttl`.
 
+## Build
+
+DTYPE has no build: the current schema is the RDF/XML file `schema/dtype`, and
+the version folders are frozen, so there are no `target/dist` graphs to make.
+To check that every RDF file in the repository parses (needs Python 3 with
+`rdflib`; a virtual environment in `.venv/` is git-ignored):
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install rdflib
+python3 scripts/check_rdf.py
+```
+
 ## Formatting
 
 `README.md` and `CHANGELOG.md` are formatted with
