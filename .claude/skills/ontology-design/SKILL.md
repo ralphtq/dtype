@@ -187,6 +187,28 @@ line break inside can come back as an ordinary one-line string. The same
 applies whatever the literal's language tag or datatype (`@en`, `rdf:HTML`):
 keep the existing tag or datatype when converting.
 
+What counts as a sentence end: `.`, `!` or `?` (with any closing quote or
+bracket) followed by a space and a capital letter, a digit or an opening
+quote or bracket. These do not end a sentence:
+
+- abbreviations: `e.g.`, `i.e.`, `etc.`, `Inc.`, `Ltd.`, `Corp.`, `No.`,
+  `Sec.`, `v.`, `vs.`, month names such as `Oct.` and `Sept.`;
+- initials and acronyms with stops: `U.S.`, `C.F.R.`;
+- clause numbers at the start of the text: `3. All copies …`, `1.1 "Copyright Holder" …`.
+
+A company suffix does end a sentence when an ordinary sentence opener follows
+it ("…Zend Technologies Ltd. For written permission…"), but not before a name
+("Unicode, Inc. License Agreement") or in all-capitals text ("SILICON
+GRAPHICS, INC. BE LIABLE").
+
+Descriptions that are already triple-quoted keep their layout: long texts
+such as license clauses keep their paragraphs and numbered items; do not
+re-flow them.
+
+DTYPE's current schema (`schema/dtype`) is RDF/XML, so
+`scripts/split_descriptions.py` (in VAEM, VOAG, DEONA, NRMDOC and TROM, which
+reads Turtle) does not apply to it yet; split by hand.
+
 Inside a triple-quoted string, write a double quote as a plain `"`, never as
 `\"`: Turtle needs the escape only in an ordinary one-line string. When you
 convert a one-line string to a multi-line one, remove the backslashes. The only
