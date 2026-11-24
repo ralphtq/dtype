@@ -201,9 +201,13 @@ it ("…Zend Technologies Ltd. For written permission…"), but not before a nam
 ("Unicode, Inc. License Agreement") or in all-capitals text ("SILICON
 GRAPHICS, INC. BE LIABLE").
 
-Descriptions that are already triple-quoted keep their layout: long texts
-such as license clauses keep their paragraphs and numbered items; do not
-re-flow them.
+A long text that is already triple-quoted, such as a license clause, keeps
+its layout: blank lines between paragraphs and numbered or lettered items stay
+as they are; only a line holding more than one sentence is split. A heading
+run into its text ("2.2. Contributor Grant. Subject to…") is split like a
+sentence, so the heading gets its own line. Start the string with a line break
+after the opening `"""`, so a text that begins with a quote does not run into
+it (`""""This License"…`).
 
 DTYPE's current schema (`schema/dtype`) is RDF/XML, so
 `scripts/split_descriptions.py` (in VAEM, VOAG, DEONA, NRMDOC and TROM, which
